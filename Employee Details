@@ -1,0 +1,40 @@
+class Employee:
+    def __init__(self, N, I, S):
+        self.__Name = N
+        self.__ID = I
+        self.__Salary = S
+        self.__Annual = self.__Salary * 12
+
+    def Display(self):
+        print("Name: ", self.__Name)
+        print("ID Number: ", self.__ID)
+        print("Salary: ", self.__Salary)
+
+    def AnnualSalary(self):
+        print("Annual Salary: ", self.__Annual)
+
+
+class Manager(Employee):
+    def __init__(self, N, I, S, D):
+        Employee.__init__(self, N, I, S)  # Call Employee's constructor
+        self.Department = D  # New Manager-specific attribute
+
+    def ApproveLeave(EmployeeName):
+        print("Leave approved for:", EmployeeName)
+
+    def Display(self):
+        Employee.Display(self)
+        print("Department: ", self.Department)
+
+
+class Developer(Employee):
+    def __init__(self, N, I, S, P):
+        Employee.__init__(self, N, I, S)
+        self.__ProgrammingLanguage = P
+
+    def Display(self):
+        Employee.Display(self)
+        print("The programming language used: ", self.__ProgrammingLanguage)
+
+    def WriteCode(self):
+        print("Writing code in: ", self.__ProgrammingLanguage)
